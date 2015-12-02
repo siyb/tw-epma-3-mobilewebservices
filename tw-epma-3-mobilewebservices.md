@@ -50,6 +50,7 @@
 * There are certain criteria that should be considered for all Webservices
 * There is no silver bullet, there are downsides to almost all things discussed here:
     * Best decision: the one that you gain the most from
+* Use integration tests (black box) to cover your API spec
 
 ## Theory - 1 - gzip
 
