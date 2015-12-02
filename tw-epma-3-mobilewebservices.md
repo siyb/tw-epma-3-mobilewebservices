@@ -209,4 +209,6 @@ doSomeThing(1,2,3, function (err, result) {
         * npm install <module> --save - install module and save to package.json
         * npm install - (without parameters) install packages listed in package.json
 
-# Example Code
+
+# [Example Code](https://github.com/SphericalElephant/nodejs-example-webservice)
+
