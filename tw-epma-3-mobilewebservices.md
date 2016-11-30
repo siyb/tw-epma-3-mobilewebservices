@@ -2,6 +2,11 @@
 % Patrick Sturm
 % 01.12.2015
 
+## Information
+
+* Any issues with this presentation? Write a ticket or send me a pull request ;).
+* Repo: [https://github.com/siyb/tw-epma-3-mobilewebservices](https://github.com/siyb/tw-epma-3-mobilewebservices)
+
 # Agenda
 
 ## Agenda
