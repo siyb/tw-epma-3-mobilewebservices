@@ -1,6 +1,6 @@
 % Mobile Webservice
 % Patrick Sturm
-% 02.10.2017
+% 05.04.2018
 
 ## Information
 
@@ -13,8 +13,7 @@
 
 * Relevance
 * Theory - General / Mobile specific
-* Introduction to Node.js and mongoDB
-* Code Example
+* Scaffold / Coding Session
 
 # Relevance
 
@@ -31,7 +30,6 @@
     * The developers mood
     * The projects cost
     * UX
-
 
 ## Relevance - 3 - Why is Mobile special
 
@@ -64,7 +62,7 @@
     * gzip is a must to reduce transmitted data
 * Results:
     * Reduction of transmitted data
-    * Decompression is CPU intensive, thus more power is required.
+    * Decompression is CPU intensive, thus, the energy consumption is slightly increased.
 
 ## Theory - 2 - not all requests are equal
 
@@ -100,7 +98,7 @@
 ## Theory - 5 - slim data formats / general pointers
 
 * Use slim data formats - meaning formats without huge overhead
-* i.e. perfer JSON to lets say XML(SOAP!) for instance
+* i.e. perfer JSON to lets say XML (SOAP!) for instance
     * there are other alternatives to JSON, but you get the point (ProtoBuf, YAML, etc)
 * Make sure not to send out redundant data, e.g. id fields referencing to encapsulating instance
 * Do not use base64 (or similar algorithms / measures) to encode binary data to be encoded by the consumer
@@ -124,97 +122,6 @@
 
 * Provide a mobile specific API gateway (facade)!
 
-# Intro node.js / mongodb
-
-## node.js
-
-* node.js = server side JavaScript
-* Build on top of google's v8
-* Newest version is not entirely es6 complient
-* node.js is event based, which can result in "callback hell"
-* A node.js developer will work on a single thread only, IO (blocking) calls executed with callbacks
-* Object Prototypes vs. Classes
-
-## mongoDB
-
-* document store
-* JSON (binary) storage
-* aggregation pipeline / map reduce
-* not really ACID complient (split brain / clustering / sharding), atomic transaction on document basis
-* schema less
-* referred to as "yolo-db" by our sysop ;)
-
-## node.js - 1 - first steps
-
-* node.js code is organized in modules: can be anything assignable to a variable
-
-```javascript
-const MyClass = class MyClass {
-     constructor() {
-        this.a = 1;
-     }
-     printA() {
-         console.log(this.a);
-     }
-}
-module.exports = MyClass;
-```
-```javascript
-// loading module
-var MyClass = require('./path/to/MyClass');
-var myInstance = new MyClass();
-```
-
-## nodejs - 2 - functions
-
-* functions are first class citizens (Objects)
-* can be used as other Objects: assigned to variables, passed as function parameters, getting prototype info
-* they can be bound to a context:
-```javascript
-var fna = function a() {
-    console.log(this.x);
-};
-// create new function by binding to
-// different context
-var boundFna = fna.bind(this);
-```
-* can be exported by modules as well
-* function signatures are not set in stone
-    * arguments!
-
-## nodejs - 3 - objects
-
-* JavaScript is Object Oriented - Prototype vs. Class
-* node.js 4.X added supports for classes, lets use those for now (where applicable)
-* JavaScript knows null / undefined, variables do not have to be set
-
-## nodejs - 4 - callbacks
-
-* node.js relies on callbacks to establish a control flow
-```javascript
-doSomeThing(1,2,3, function (err, result) {
-    if (err) {
-        return;
-    }
-    save(result);
-});
-``` 
-* usually: callback(err, result, ...)
-
-## nodejs - 5 - frameworks / npm
-
-* we will rely heavyly on frameworks
-    * express - nodejs web framework
-    * mongoose - nodejs mongoDB framework (allows schemas)
-    * lodash - neat utilities for data manipulation
-* we will not be using promises (for now)
-* npm
-    * package manager
-        * npm init - initialize your npm package
-        * npm install <module> --save - install module and save to package.json
-        * npm install - (without parameters) install packages listed in package.json
-
-
-# [Example Code](https://github.com/SphericalElephant/nodejs-example-webservice)
+# Scaffold / Coding Session
 
 # Any Questions?
